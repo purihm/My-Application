@@ -76,8 +76,29 @@ public class Atom{
         return numbValenceElec;
     }
 
-    public void setNumbValenceElec(int numbValenceElec) {
-        this.numbValenceElec = numbValenceElec;
+    public void setNumbValenceElec(int atomicNumb) {
+
+        if (atomicNumb<3){
+            this.numbValenceElec = atomicNumb;
+        }
+        if(atomicNumb>=3 && atomicNumb<=10){
+            this.numbValenceElec=atomicNumb-2;
+        }
+        if(atomicNumb>=11 && atomicNumb<=18){
+            this.numbValenceElec=atomicNumb-10;
+        }
+        if(atomicNumb>=19 && atomicNumb<30){
+            this.numbValenceElec=atomicNumb-18;
+        }
+        if(atomicNumb>=30 && atomicNumb<=36){
+            this.numbValenceElec=atomicNumb-28;
+        }
+        if(atomicNumb>=37 && atomicNumb<=47){
+            this.numbValenceElec=atomicNumb-36;
+        }
+        if(atomicNumb>=48 && atomicNumb<=54){
+            this.numbValenceElec=atomicNumb-46;
+        }
     }
 
 }
