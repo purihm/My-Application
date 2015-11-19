@@ -25,4 +25,9 @@
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
         android:id="@+id/coreChargeView"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:id="@+id/atomicMassView"/>
 </RelativeLayout>
