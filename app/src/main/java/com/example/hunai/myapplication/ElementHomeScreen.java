@@ -27,7 +27,7 @@ public class ElementHomeScreen extends AppCompatActivity {
         Atom atom = new Atom(atomicNumbers.getInt("atom"), getApplicationContext());
         Toast.makeText(ElementHomeScreen.this, atom.getAtomicName() + " has " + (atom.getAtomicNumb() + 1) + " electrons.", Toast.LENGTH_SHORT).show();
         TextView coreChargeView = (TextView) findViewById(R.id.coreChargeView);
-        coreChargeView.setText(atom.getNumbValenceElec());
+        coreChargeView.setText(""+atom.getNumbValenceElec());
     }
 
 }

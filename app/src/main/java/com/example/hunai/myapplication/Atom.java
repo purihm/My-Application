@@ -26,10 +26,10 @@ public class Atom{
     public Atom(int atomicNumb, Context cxt) {
         this.atomicNumb = atomicNumb;
         this.cxt = cxt;
+        setAtomicName(atomicNumb);
         setAtomicMass(atomicNumb);
         setElectronConfig(atomicNumb);
         setNumbValenceElec(atomicNumb);
-        setAtomicName(atomicNumb);
     }
 
     public int getAtomicNumb() {
@@ -55,6 +55,7 @@ public class Atom{
     }
 
     public void setAtomicMass(int atomicMass) {
+
     }
 
     public String getElectronConfig() {
