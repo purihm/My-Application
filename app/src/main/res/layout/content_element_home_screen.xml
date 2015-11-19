@@ -15,6 +15,14 @@
         android:layout_height="wrap_content"
         android:src="@drawable/circle"
         android:layout_centerInParent="true"/>
-
-
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/circle2"
+        android:layout_centerInParent="true"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:id="@+id/coreChargeView"/>
 </RelativeLayout>

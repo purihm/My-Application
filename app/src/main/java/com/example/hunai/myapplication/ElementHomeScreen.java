@@ -7,6 +7,7 @@ import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.io.Serializable;
@@ -25,7 +26,8 @@ public class ElementHomeScreen extends AppCompatActivity {
         Bundle atomicNumbers = getIntent().getExtras();
         Atom atom = new Atom(atomicNumbers.getInt("atom"), getApplicationContext());
         Toast.makeText(ElementHomeScreen.this, atom.getAtomicName() + " has " + (atom.getAtomicNumb() + 1) + " electrons.", Toast.LENGTH_SHORT).show();
-
+        TextView coreChargeView = (TextView) findViewById(R.id.coreChargeView);
+        coreChargeView.setText(atom.getNumbValenceElec());
     }
 
 }

@@ -33,7 +33,7 @@ public class Atom{
     }
 
     public int getAtomicNumb() {
-        return atomicNumb;
+        return atomicNumb+1;
     }
 
     public String getAtomicName() {
