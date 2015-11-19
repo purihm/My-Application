@@ -19,7 +19,7 @@ public class Atom{
     private String electronConfig;
     private int coreCharge;
     private int numbValenceElec;
-    Context cxt;
+    private Context cxt;
 
     private String atomicName;
 
