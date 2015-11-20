@@ -6,6 +6,7 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.text.Html;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -30,6 +31,8 @@ public class ElementHomeScreen extends AppCompatActivity {
         coreChargeView.setText("+" + atom.getNumbValenceElec());
         TextView atomicMassView = (TextView) findViewById(R.id.atomicMassView);
         atomicMassView.setText("The atomic mass is "+atom.getAtomicMass());
+        TextView elecConfigView=(TextView) findViewById(R.id.elecConfigView);
+        elecConfigView.setText("The electron configuration is "+atom.getElectronConfig());
     }
 
 }

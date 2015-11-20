@@ -20,7 +20,7 @@ public class Atom{
     private int coreCharge;
     private int numbValenceElec;
     private Context cxt;
-    List<Double> atomicMassArray;
+    private List<Double> atomicMassArray;
     private String atomicName;
 
     public Atom(int atomicNumb, Context cxt) {
@@ -42,13 +42,13 @@ public class Atom{
         return atomicName;
     }
 
-    public void setAtomicName(int atomicNumb) {
+    private void setAtomicName(int atomicNumb) {
         String[] elements = cxt.getResources().getStringArray(R.array.elements_names);
         List<String> elementNames = Arrays.asList(elements);
         atomicName = elementNames.get(atomicNumb-1);
     }
 
-    public void setAtomicNumb(int atomicNumb) {
+    private void setAtomicNumb(int atomicNumb) {
         this.atomicNumb = atomicNumb;
     }
 
@@ -64,14 +64,47 @@ public class Atom{
         return electronConfig;
     }
 
-    public void setElectronConfig(int atomicNumb) {
+    private void setElectronConfig(int atomicNumb) {
+        if(atomicNumb<=2){
+            this.electronConfig="1s"+this.superscript(""+atomicNumb);
+        }
+        else if(atomicNumb>2 && atomicNumb<=4){
+            this.electronConfig="1s"+this.superscript(""+2)+"2s"+this.superscript(""+(atomicNumb-2));
+        }
+        else if(atomicNumb>4 && atomicNumb<=10){
+            this.electronConfig="1s"+this.superscript(""+2)+"2s"+this.superscript(""+2)+"2p"+this.superscript(""+(atomicNumb-4));
+        }
+        else if(atomicNumb>10 && atomicNumb<=12){
+            this.electronConfig="1s"+this.superscript(""+2)+"2s"+this.superscript(""+2)+"2p"+this.superscript(""+6)+"3s"+this.superscript(""+(atomicNumb-10));
+        }
+        else if(atomicNumb>12 && atomicNumb<=18){
+            this.electronConfig="1s"+this.superscript(""+2)+"2s"+this.superscript(""+2)+"2p"+this.superscript(""+6)+"3s"+this.superscript(""+2)+"3p"+this.superscript(""+(atomicNumb-12));
+        }
+        else if(atomicNumb>18 && atomicNumb<=20){
+            this.electronConfig="1s"+this.superscript(""+2)+"2s"+this.superscript(""+2)+"2p"+this.superscript(""+6)+"3s"+this.superscript(""+2)+"3p"+this.superscript(""+6)+"4s"+this.superscript(""+(atomicNumb-18));
+        }
+        else if(atomicNumb>20 && atomicNumb<=30){
+            this.electronConfig="1s"+this.superscript(""+2)+"2s"+this.superscript(""+2)+"2p"+this.superscript(""+6)+"3s"+this.superscript(""+2)+"3p"+this.superscript(""+6)+"4s"+this.superscript(""+2)+"3d"+this.superscript(""+(atomicNumb-20));
+        }
+        else if(atomicNumb>30 && atomicNumb<=36){
+            this.electronConfig="1s"+this.superscript(""+2)+"2s"+this.superscript(""+2)+"2p"+this.superscript(""+6)+"3s"+this.superscript(""+2)+"3p"+this.superscript(""+6)+"4s"+this.superscript(""+2)+"3d"+this.superscript(""+10)+"4p"+this.superscript(""+(atomicNumb-30));
+        }
+        else if(atomicNumb>36 && atomicNumb<=38){
+            this.electronConfig="1s"+this.superscript(""+2)+"2s"+this.superscript(""+2)+"2p"+this.superscript(""+6)+"3s"+this.superscript(""+2)+"3p"+this.superscript(""+6)+"4s"+this.superscript(""+2)+"3d"+this.superscript(""+10)+"4p"+this.superscript(""+6)+"5s"+this.superscript(""+(atomicNumb-36));
+        }
+        else if(atomicNumb>38 && atomicNumb<=48){
+            this.electronConfig="1s"+this.superscript(""+2)+"2s"+this.superscript(""+2)+"2p"+this.superscript(""+6)+"3s"+this.superscript(""+2)+"3p"+this.superscript(""+6)+"4s"+this.superscript(""+2)+"3d"+this.superscript(""+10)+"4p"+this.superscript(""+6)+"5s"+this.superscript(""+2)+"4d"+this.superscript(""+(atomicNumb-38));
+        }
+        else if(atomicNumb>48 && atomicNumb<=54){
+            this.electronConfig="1s"+this.superscript(""+2)+"2s"+this.superscript(""+2)+"2p"+this.superscript(""+6)+"3s"+this.superscript(""+2)+"3p"+this.superscript(""+6)+"4s"+this.superscript(""+2)+"3d"+this.superscript(""+10)+"4p"+this.superscript(""+6)+"5s"+this.superscript(""+2)+"4d"+this.superscript(""+10)+"5p"+this.superscript(""+(atomicNumb-48));
+        }
     }
 
     public int getCoreCharge() {
         return coreCharge;
     }
 
-    public void setCoreCharge(int coreCharge) {
+    private void setCoreCharge(int coreCharge) {
         this.coreCharge = coreCharge;
     }
 
@@ -79,29 +112,42 @@ public class Atom{
         return numbValenceElec;
     }
 
-    public void setNumbValenceElec(int atomicNumb) {
+    private void setNumbValenceElec(int atomicNumb) {
 
         if (atomicNumb<3){
             this.numbValenceElec = atomicNumb;
         }
-        if(atomicNumb>=3 && atomicNumb<=10){
+        else if(atomicNumb>=3 && atomicNumb<=10){
             this.numbValenceElec=atomicNumb-2;
         }
-        if(atomicNumb>=11 && atomicNumb<=18){
+        else if(atomicNumb>=11 && atomicNumb<=18){
             this.numbValenceElec=atomicNumb-10;
         }
-        if(atomicNumb>=19 && atomicNumb<30){
+        else if(atomicNumb>=19 && atomicNumb<30){
             this.numbValenceElec=atomicNumb-18;
         }
-        if(atomicNumb>=30 && atomicNumb<=36){
+        else if(atomicNumb>=30 && atomicNumb<=36){
             this.numbValenceElec=atomicNumb-28;
         }
-        if(atomicNumb>=37 && atomicNumb<=47){
+        else if(atomicNumb>=37 && atomicNumb<=47){
             this.numbValenceElec=atomicNumb-36;
         }
-        if(atomicNumb>=48 && atomicNumb<=54){
+        else if(atomicNumb>=48 && atomicNumb<=54){
             this.numbValenceElec=atomicNumb-46;
         }
+    }
+    public static String superscript(String str) {
+        str = str.replaceAll("0", "⁰");
+        str = str.replaceAll("1", "¹");
+        str = str.replaceAll("2", "²");
+        str = str.replaceAll("3", "³");
+        str = str.replaceAll("4", "⁴");
+        str = str.replaceAll("5", "⁵");
+        str = str.replaceAll("6", "⁶");
+        str = str.replaceAll("7", "⁷");
+        str = str.replaceAll("8", "⁸");
+        str = str.replaceAll("9", "⁹");
+        return str;
     }
 
 }
