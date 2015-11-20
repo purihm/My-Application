@@ -31,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         toolbar.setTitle("Elements");
         toolbar.setTitleTextColor(Color.WHITE);
+
         elements = getResources().getStringArray(R.array.elements_names);
         ListAdapter theAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, elements);
         ListView theListView = (ListView) findViewById(R.id.listView);
