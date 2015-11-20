@@ -33,6 +33,8 @@ public class ElementHomeScreen extends AppCompatActivity {
         atomicMassView.setText("The atomic mass is "+atom.getAtomicMass());
         TextView elecConfigView=(TextView) findViewById(R.id.elecConfigView);
         elecConfigView.setText("The electron configuration is "+atom.getElectronConfig());
+        TextView atomicabbView=(TextView) findViewById(R.id.atomicabbView);
+        atomicabbView.setText("The element symbol is: " +atom.getAtomicabb());
     }
 
 }
