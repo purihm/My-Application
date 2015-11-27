@@ -17,12 +17,12 @@ public class Atom{
     private int atomicNumb;
     private double atomicMass;
     private String electronConfig, atomicabb;
-    private int coreCharge;
     private int numbValenceElec;
     private Context cxt;
     private List<Double> atomicMassArray;
     private List<String> atomicabbArray;
     private String atomicName;
+    private double atomicMoles;
 
     public Atom(int atomicNumb, Context cxt) {
         this.atomicNumb = atomicNumb;
@@ -30,7 +30,7 @@ public class Atom{
         atomicMassArray=new ArrayList<Double>();
         atomicMassArray.add(1.01);atomicMassArray.add(4.00);atomicMassArray.add(6.94);atomicMassArray.add(9.01);atomicMassArray.add(10.81);atomicMassArray.add(12.01);atomicMassArray.add(14.01);atomicMassArray.add(15.99);atomicMassArray.add(19.00);atomicMassArray.add(20.18);atomicMassArray.add(22.99);atomicMassArray.add(25.31);atomicMassArray.add(26.98);atomicMassArray.add(28.09);atomicMassArray.add(30.97);atomicMassArray.add(32.07);atomicMassArray.add(35.45);atomicMassArray.add(39.95);atomicMassArray.add(39.10);atomicMassArray.add(40.08);atomicMassArray.add(44.96);atomicMassArray.add(47.87);atomicMassArray.add(50.94);atomicMassArray.add(52.00);atomicMassArray.add(54.94);atomicMassArray.add(55.85);atomicMassArray.add(58.93);atomicMassArray.add(58.69);atomicMassArray.add(63.55);atomicMassArray.add(65.41);atomicMassArray.add(69.72);atomicMassArray.add(72.64);atomicMassArray.add(74.92);atomicMassArray.add(78.96);atomicMassArray.add(79.90);atomicMassArray.add(83.80);atomicMassArray.add(85.47);atomicMassArray.add(87.62);atomicMassArray.add(88.91);atomicMassArray.add(91.22);atomicMassArray.add(92.91);atomicMassArray.add(95.94);atomicMassArray.add(96.91);atomicMassArray.add(101.07);atomicMassArray.add(102.91);atomicMassArray.add(106.42);atomicMassArray.add(107.87);atomicMassArray.add(112.41);atomicMassArray.add(114.82);atomicMassArray.add(118.71);atomicMassArray.add(121.76);atomicMassArray.add(127.60);atomicMassArray.add(126.90);atomicMassArray.add(131.29);
         atomicabbArray= new ArrayList<String>();
-        atomicabbArray.add("H");atomicabbArray.add("He");
+        atomicabbArray.add("H");atomicabbArray.add("He");atomicabbArray.add("Li");atomicabbArray.add("Be");atomicabbArray.add("B");atomicabbArray.add("C");atomicabbArray.add("N");atomicabbArray.add("O");atomicabbArray.add("F");atomicabbArray.add("Ne");atomicabbArray.add("Na");atomicabbArray.add("Mg");atomicabbArray.add("Al");atomicabbArray.add("Si");atomicabbArray.add("P");atomicabbArray.add("S");atomicabbArray.add("Cl");atomicabbArray.add("Ar");atomicabbArray.add("K");atomicabbArray.add("Ca");atomicabbArray.add("Sc");atomicabbArray.add("Ti");atomicabbArray.add("V");atomicabbArray.add("Cr");atomicabbArray.add("Mn");atomicabbArray.add("Fe");atomicabbArray.add("Co");atomicabbArray.add("Ni");atomicabbArray.add("Cu");atomicabbArray.add("Zn");atomicabbArray.add("Ga");atomicabbArray.add("Ge");atomicabbArray.add("As");atomicabbArray.add("Se");atomicabbArray.add("Br");atomicabbArray.add("Kr");atomicabbArray.add("Rb");atomicabbArray.add("Sr");atomicabbArray.add("Y");atomicabbArray.add("Zr");atomicabbArray.add("Nb");atomicabbArray.add("Mo");atomicabbArray.add("Tc");atomicabbArray.add("Ru");atomicabbArray.add("Rh");atomicabbArray.add("Pd");atomicabbArray.add("Ag");atomicabbArray.add("Cd");atomicabbArray.add("In");atomicabbArray.add("Sn");atomicabbArray.add("Sb");atomicabbArray.add("Te");atomicabbArray.add("I");atomicabbArray.add("Xe");
         setAtomicName(atomicNumb);
         setAtomicabb(atomicNumb);
         setAtomicMass(atomicNumb);
@@ -108,14 +108,6 @@ public class Atom{
         }
     }
 
-    public int getCoreCharge() {
-        return coreCharge;
-    }
-
-    private void setCoreCharge(int coreCharge) {
-        this.coreCharge = coreCharge;
-    }
-
     public int getNumbValenceElec() {
         return numbValenceElec;
     }
@@ -144,7 +136,13 @@ public class Atom{
             this.numbValenceElec=atomicNumb-46;
         }
     }
-    public static String superscript(String str) {
+    public void setAtomicMoles(int atomicMass, int amount){
+        this.atomicMoles=amount/atomicMass;
+    }
+    public double getAtomicMoles(){
+        return atomicMoles;
+    }
+    public static String superscript(String str) {//Remember to comment source
         str = str.replaceAll("0", "⁰");
         str = str.replaceAll("1", "¹");
         str = str.replaceAll("2", "²");

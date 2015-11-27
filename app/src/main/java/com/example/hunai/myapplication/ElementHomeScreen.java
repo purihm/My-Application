@@ -7,7 +7,10 @@ import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.text.Html;
+import android.view.KeyEvent;
 import android.view.View;
+import android.view.inputmethod.EditorInfo;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -27,14 +30,25 @@ public class ElementHomeScreen extends AppCompatActivity {
         Bundle atomicNumbers = getIntent().getExtras();
         Atom atom = new Atom(atomicNumbers.getInt("atom"), getApplicationContext());
         Toast.makeText(ElementHomeScreen.this, atom.getAtomicName() + " has " + (atom.getAtomicNumb()) + " electrons.", Toast.LENGTH_SHORT).show();
-        TextView coreChargeView = (TextView) findViewById(R.id.coreChargeView);
-        coreChargeView.setText("+" + atom.getNumbValenceElec());
         TextView atomicMassView = (TextView) findViewById(R.id.atomicMassView);
         atomicMassView.setText("The atomic mass is "+atom.getAtomicMass());
         TextView elecConfigView=(TextView) findViewById(R.id.elecConfigView);
         elecConfigView.setText("The electron configuration is "+atom.getElectronConfig());
         TextView atomicabbView=(TextView) findViewById(R.id.atomicabbView);
         atomicabbView.setText("The element symbol is: " +atom.getAtomicabb());
+
+        EditText editText=(EditText)findViewById(R.id.editText);
+        editText.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+            @Override
+            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+                boolean handled=false;
+                if (actionId== EditorInfo.IME_ACTION_SEND){
+
+                    handled=true;
+                }
+                return handled;
+            }
+        });
     }
 
 }

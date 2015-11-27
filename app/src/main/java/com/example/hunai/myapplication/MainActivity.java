@@ -41,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
                 String elementthing ="You selected "+ String.valueOf(adapterView.getItemAtPosition(position));
                 Toast.makeText(MainActivity.this, elementthing + " has " + (position+1) + " electrons.", Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(MainActivity.this, ElementHomeScreen.class);
+                Intent intent = new Intent(MainActivity.this, Main2Activity.class);
                 intent.putExtra("atom", (position+1));
                 startActivity(intent);
             }
