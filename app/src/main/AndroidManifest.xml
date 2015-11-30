@@ -33,6 +33,11 @@
             android:label="@string/title_activity_core_charge_screen"
             android:theme="@style/AppTheme.NoActionBar" >
         </activity>
+        <activity
+            android:name=".convertScreen"
+            android:label="@string/title_activity_convert_screen"
+            android:theme="@style/AppTheme.NoActionBar" >
+        </activity>
     </application>
 
 </manifest>

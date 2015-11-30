@@ -26,5 +26,11 @@
         android:text="ElectronInformation"
         android:onClick="onRadioButtonClicked"
         android:id="@+id/electronInfoButton"/>
+    <RadioButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Mole Converter"
+        android:onClick="onRadioButtonClicked"
+        android:id="@+id/convertButton"/>
 </RadioGroup>
 </LinearLayout>

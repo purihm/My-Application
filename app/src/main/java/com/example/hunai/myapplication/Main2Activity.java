@@ -39,8 +39,16 @@ public class Main2Activity extends AppCompatActivity {
                         startActivity(intent);
                     }
                 break;
+                    case R.id.convertButton:
+                        if(checked) {
+                            Intent intent = new Intent(Main2Activity.this, convertScreen.class);
+                            intent.putExtra("atom", atom.getAtomicNumb());
+                            startActivity(intent);
+                        }
+                        break;
+                        }
                 }
 
             }
 
-        }
+

@@ -17,6 +17,7 @@ public class CoreChargeScreen extends AppCompatActivity {
         setContentView(R.layout.activity_core_charge_screen);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
         Bundle atomicNumbers = getIntent().getExtras();
         Atom atom = new Atom(atomicNumbers.getInt("atom"), getApplicationContext());
         Toast.makeText(CoreChargeScreen.this, atom.getAtomicName() + " has " + (atom.getAtomicNumb()) + " electrons.", Toast.LENGTH_SHORT).show();
