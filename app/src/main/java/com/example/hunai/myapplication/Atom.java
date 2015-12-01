@@ -19,8 +19,8 @@ public class Atom{
     private String electronConfig, atomicabb;
     private int numbValenceElec;
     private Context cxt;
-    private List<Double> atomicMassArray;
-    private List<String> atomicabbArray;
+    private ArrayList<Double> atomicMassArray;
+    private ArrayList<String> atomicabbArray;
     private String atomicName;
     private double atomicMoles;
 
@@ -136,8 +136,8 @@ public class Atom{
             this.numbValenceElec=atomicNumb-46;
         }
     }
-    public void setAtomicMoles(int atomicMass, int amount){
-        this.atomicMoles=amount/atomicMass;
+    public void setAtomicMoles(double amount){
+        this.atomicMoles= amount/getAtomicMass();
     }
     public double getAtomicMoles(){
         return atomicMoles;

@@ -14,43 +14,30 @@ import android.widget.TextView;
 
 
 
-public class convertScreen extends AppCompatActivity implements View.OnClickListener {
+public class convertScreen extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_convert_screen);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        final TextView moleView=(TextView) findViewById(R.id.moleView);
         setSupportActionBar(toolbar);
+        toolbar.setTitle("Conversion Center");
         Bundle atomicNumbers = getIntent().getExtras();
-        Atom atom = new Atom(atomicNumbers.getInt("atom"), getApplicationContext());
+        final Atom atom = new Atom(atomicNumbers.getInt("atom"), getApplicationContext());
 
-        Button button = (Button) findViewById(R.id.the_button);
-        button.setOnClickListener(this);
-
-        EditText editText = (EditText) findViewById(R.id.editText);
-        editText.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+        final EditText editText = (EditText) findViewById(R.id.editText);
+        Button calculate = (Button) findViewById(R.id.the_button);
+        calculate.setOnClickListener(new View.OnClickListener() {
             @Override
-            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
-                boolean handled = false;
-                if (actionId == EditorInfo.IME_ACTION_SEND) {
+            public void onClick(View v) {
+                atom.setAtomicMoles(Double.parseDouble(editText.getText().toString()));
+                moleView.setText("The number of moles in your substance is " + atom.getAtomicMoles());
 
-                    handled = true;
-                }
-                return handled;
             }
-
-
         });
+        moleView.setText("The number of moles in your substance is "+atom.getAtomicMoles());
     }
 
-    @Override
-    public void onClick(View v) {
-
-        switch (v.getId() /*to get clicked view id**/) {
-            case R.id.the_button:
-
-                break;
-        }
-    }
 }
