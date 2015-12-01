@@ -26,7 +26,6 @@ public class convertScreen extends AppCompatActivity {
         toolbar.setTitle("Conversion Center");
         Bundle atomicNumbers = getIntent().getExtras();
         final Atom atom = new Atom(atomicNumbers.getInt("atom"), getApplicationContext());
-
         final EditText editText = (EditText) findViewById(R.id.editText);
         Button calculate = (Button) findViewById(R.id.the_button);
         calculate.setOnClickListener(new View.OnClickListener() {
@@ -37,7 +36,6 @@ public class convertScreen extends AppCompatActivity {
 
             }
         });
-        moleView.setText("The number of moles in your substance is "+atom.getAtomicMoles());
     }
 
 }

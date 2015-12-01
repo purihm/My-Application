@@ -10,14 +10,17 @@
     tools:showIn="@layout/activity_convert_screen"
     tools:context="com.example.hunai.myapplication.convertScreen"
     android:orientation="vertical">
-
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Enter the number of grams"
+        android:id="@+id/gramView"/>
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:inputType="number"
+        android:inputType="numberDecimal"
         android:ems="10"
-        android:id="@+id/editText"
-        android:imeOptions="actionSend"/>
+        android:id="@+id/editText" />
 
     <Button
         android:layout_width="wrap_content"
