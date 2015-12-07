@@ -1,16 +1,19 @@
 package com.example.hunai.myapplication;
 
+import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.MotionEvent;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 public class CoreChargeScreen extends AppCompatActivity {
-
+    AnimationDrawable circleAnimation;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,6 +26,8 @@ public class CoreChargeScreen extends AppCompatActivity {
         Toast.makeText(CoreChargeScreen.this, atom.getAtomicName() + " has " + (atom.getAtomicNumb()) + " electrons.", Toast.LENGTH_SHORT).show();
         TextView coreChargeView = (TextView) findViewById(R.id.coreChargeView);
         coreChargeView.setText("+" + atom.getNumbValenceElec());
+
+
     }
 
 }

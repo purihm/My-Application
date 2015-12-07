@@ -142,7 +142,7 @@ public class Atom{
     public double getAtomicMoles(){
         return atomicMoles;
     }
-    public static String superscript(String str) {//Remember to comment source
+    public static String superscript(String str) {
         str = str.replaceAll("0", "⁰");
         str = str.replaceAll("1", "¹");
         str = str.replaceAll("2", "²");
