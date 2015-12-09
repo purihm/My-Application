@@ -36,7 +36,8 @@ public class ElementHomeScreen extends AppCompatActivity {
         elecConfigView.setText("The electron configuration is "+atom.getElectronConfig());
         TextView atomicabbView=(TextView) findViewById(R.id.atomicabbView);
         atomicabbView.setText("The element symbol is: " +atom.getAtomicabb());
-
+        TextView atomicValenceView=(TextView) findViewById(R.id.atomicValenceView);
+        atomicValenceView.setText("The number of valence electrons is: " +atom.getNumbValenceElec());
 
     }
 
