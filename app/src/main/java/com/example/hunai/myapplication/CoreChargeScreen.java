@@ -13,6 +13,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+
 import java.util.ArrayList;
 
 public class CoreChargeScreen extends AppCompatActivity {
@@ -58,9 +59,55 @@ public class CoreChargeScreen extends AppCompatActivity {
 
         RelativeLayout.LayoutParams[] params= new RelativeLayout.LayoutParams[12];
         for(index=1; index<=atom.getNumbValenceElec();index++){
-           params[index] =  new RelativeLayout.LayoutParams(30,40);
-            params[index].leftMargin=index*50;
-            params[index].topMargin=index*50;
+            params[index] =new RelativeLayout.LayoutParams(30,40);
+            final int r=300;
+            final int xcenter=475;
+            final int ycenter=700;
+            if(index==1) {
+                params[index].leftMargin = xcenter;
+                params[index].topMargin = ycenter+r;
+            }
+            else if(index==2){
+                params[index].leftMargin = xcenter;
+                params[index].topMargin = ycenter-r;
+            }
+            else if(index==3){
+                params[index].leftMargin = xcenter-r;
+                params[index].topMargin = ycenter;
+            }
+            else if(index==4){
+                params[index].leftMargin = xcenter+r;
+                params[index].topMargin = ycenter;
+            }
+            else if(index==5){
+                params[index].leftMargin = (int) (xcenter+(Math.sin(Math.PI/4)));
+                params[index].topMargin = 1050;
+            }
+            else if(index==6){
+                params[index].leftMargin = 475;
+                params[index].topMargin = 1050;
+            }
+            else if(index==7){
+                params[index].leftMargin = 475;
+                params[index].topMargin = 1050;
+            }
+            else if(index==8){
+                params[index].leftMargin = 475;
+                params[index].topMargin = 1050;
+            }
+            else if(index==9){
+                params[index].leftMargin = 475;
+                params[index].topMargin = 1050;
+            }
+            else if(index==10){
+                params[index].leftMargin = 475;
+                params[index].topMargin = 1050;
+            }
+            else if(index==11){
+                params[index].leftMargin = 475;
+                params[index].topMargin = 1050;
+            }
+
             electronList[index].setImageResource(R.drawable.electroncircle);
             rl.addView(electronList[index], params[index]);
         }
