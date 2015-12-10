@@ -145,7 +145,7 @@ public class Atom{
     public double getAtomicMoles(){
         return atomicMoles;
     }
-    public static String superscript(String str) {
+    public static String superscript(String str) {//Found in this link: http://stackoverflow.com/questions/8058768/superscript-in-java-string
         str = str.replaceAll("0", "⁰");
         str = str.replaceAll("1", "¹");
         str = str.replaceAll("2", "²");

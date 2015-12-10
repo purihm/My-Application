@@ -60,9 +60,9 @@ public class CoreChargeScreen extends AppCompatActivity {
         RelativeLayout.LayoutParams[] params= new RelativeLayout.LayoutParams[12];
         for(index=1; index<=atom.getNumbValenceElec();index++){
             params[index] =new RelativeLayout.LayoutParams(30,40);
-            final int r=300;
-            final int xcenter=485;
-            final int ycenter=740;
+            final int r=360;
+            final int xcenter=475;
+            final int ycenter=700;
             if(index==1) {
                 params[index].leftMargin = xcenter;
                 params[index].topMargin = ycenter+r;
