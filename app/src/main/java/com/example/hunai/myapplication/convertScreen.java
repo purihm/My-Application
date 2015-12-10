@@ -23,7 +23,7 @@ public class convertScreen extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         final TextView moleView=(TextView) findViewById(R.id.moleView);
         setSupportActionBar(toolbar);
-        toolbar.setTitle("Conversion Center");
+        toolbar.setTitle("Mole Converter");
         Bundle atomicNumbers = getIntent().getExtras();
         final Atom atom = new Atom(atomicNumbers.getInt("atom"), getApplicationContext());
         final EditText editText = (EditText) findViewById(R.id.editText);
