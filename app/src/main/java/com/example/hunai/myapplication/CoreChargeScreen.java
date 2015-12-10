@@ -61,8 +61,8 @@ public class CoreChargeScreen extends AppCompatActivity {
         for(index=1; index<=atom.getNumbValenceElec();index++){
             params[index] =new RelativeLayout.LayoutParams(30,40);
             final int r=300;
-            final int xcenter=475;
-            final int ycenter=700;
+            final int xcenter=485;
+            final int ycenter=740;
             if(index==1) {
                 params[index].leftMargin = xcenter;
                 params[index].topMargin = ycenter+r;
@@ -80,32 +80,32 @@ public class CoreChargeScreen extends AppCompatActivity {
                 params[index].topMargin = ycenter;
             }
             else if(index==5){
-                params[index].leftMargin = (int) (xcenter+(Math.sin(Math.PI/4)));
-                params[index].topMargin = 1050;
+                params[index].leftMargin = (int) (xcenter+r*(Math.cos(Math.PI / 6)));
+                params[index].topMargin = (int) (ycenter+r*(Math.sin(Math.PI / 6)));
             }
             else if(index==6){
-                params[index].leftMargin = 475;
-                params[index].topMargin = 1050;
+                params[index].leftMargin = (int) (xcenter+r*(Math.cos(Math.PI / 3)));;
+                params[index].topMargin = (int) (ycenter+r*(Math.sin(Math.PI/3)));
             }
             else if(index==7){
-                params[index].leftMargin = 475;
-                params[index].topMargin = 1050;
+                params[index].leftMargin = (int) (xcenter+r*(Math.cos(2*Math.PI/3)));
+                params[index].topMargin = (int) (ycenter+r*(Math.sin(2*Math.PI/3)));
             }
             else if(index==8){
-                params[index].leftMargin = 475;
-                params[index].topMargin = 1050;
+                params[index].leftMargin = (int) (xcenter+r*(Math.cos(5 * Math.PI / 6)));
+                params[index].topMargin = (int) (ycenter+r*(Math.sin(5*Math.PI/6)));
             }
             else if(index==9){
-                params[index].leftMargin = 475;
-                params[index].topMargin = 1050;
+                params[index].leftMargin = (int) (xcenter+r*(Math.cos(7 * Math.PI / 6)));
+                params[index].topMargin = (int) (ycenter+r*(Math.sin(7*Math.PI/6)));
             }
             else if(index==10){
-                params[index].leftMargin = 475;
-                params[index].topMargin = 1050;
+                params[index].leftMargin = (int) (xcenter+r*(Math.cos(8 * Math.PI / 6)));
+                params[index].topMargin = (int) (ycenter+r*(Math.sin(8*Math.PI/6)));
             }
             else if(index==11){
-                params[index].leftMargin = 475;
-                params[index].topMargin = 1050;
+                params[index].leftMargin = (int) (xcenter+r*(Math.cos(7*Math.PI/4)));
+                params[index].topMargin = (int) (ycenter+r*(Math.sin(7*Math.PI/4)));
             }
 
             electronList[index].setImageResource(R.drawable.electroncircle);

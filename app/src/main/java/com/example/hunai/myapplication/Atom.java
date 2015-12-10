@@ -136,6 +136,9 @@ public class Atom{
             this.numbValenceElec=atomicNumb-46;
         }
     }
+
+
+
     public void setAtomicMoles(double amount){
         this.atomicMoles= amount/getAtomicMass();
     }

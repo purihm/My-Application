@@ -32,7 +32,7 @@ public class convertScreen extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 atom.setAtomicMoles(Double.parseDouble(editText.getText().toString()));
-                moleView.setText("The number of moles in your substance is " + atom.getAtomicMoles());
+
 
             }
         });
